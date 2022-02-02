@@ -1,0 +1,12 @@
+  <select>
+      <option value="">select</option>
+      <option *ngFor="let data of postdata |slice:0:10" [value]="data.userId">{{data.id}}</option>
+  </select>
+
+  <div class="dropdown" *ngFor="let data of postdata">
+    userid:{{data.userId}}
+    
+    <br>
+    title:{{data.title}}
+   body:{{data.body}} 
+  </div> 
