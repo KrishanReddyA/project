@@ -2,7 +2,7 @@
     <div class="col-md-3" *ngFor="let list of lists">
         <div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <div class="card-body">
-              <h5 class="card-title">{{list?.name}}</h5>
+              <h5 class="card-title" (click)="getuser(list)">{{list?.email}}</h5>
              </div>
         </div>
   
@@ -11,13 +11,13 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{list?.id}}</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{email}}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p>{{list?.name}}</p>
-            <p>{{list?.email}}</p>
-            <p>{{list?.body}}</p>
+            <p>{{id}}</p>
+            <p>{{name}}</p>
+            <p>{{body}}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

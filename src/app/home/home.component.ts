@@ -9,8 +9,12 @@ import { Dummydata } from '../dummydata';
 })
 export class HomeComponent implements OnInit {
 
+  email:any;
+  id:any;
+  name:any;
+  body:any;
   lists:Dummydata[]=[]
-  
+   
   constructor(private api:ApiserviceService) { }
 
   ngOnInit(): void {
@@ -19,5 +23,12 @@ export class HomeComponent implements OnInit {
       console.log(data)
     })
   }
+   getuser(list:any){
+    this.email = list.email
+    this.id = list.id
+    this.name = list.name
+    this.body = list.body
+        console.log(list)
+   }
 
 }
