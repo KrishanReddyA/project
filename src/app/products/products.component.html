@@ -1,12 +1,25 @@
-  <select>
-      <option value="">select</option>
-      <option *ngFor="let data of postdata |slice:0:10" [value]="data.userId">{{data.id}}</option>
-  </select>
+<label for="data">Choose a userId:</label>
 
-  <div class="dropdown" *ngFor="let data of postdata">
-    userid:{{data.userId}}
-    
-    <br>
-    title:{{data.title}}
-   body:{{data.body}} 
-  </div> 
+<select name="data" id="data">
+  <option *ngFor="let id of uid">{{id}}</option>
+  
+</select>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">UserId</th>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of postdata">
+      <tr>
+        <th scope="row">{{data.userId}}</th>
+        <td>{{data.id}}</td>
+        <td>{{data.title}}</td>
+        <td>{{data.body}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
